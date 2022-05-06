@@ -1,6 +1,6 @@
 {
   "CHANNEL":
-              {"avtotrakt": "@calls_from_office",
+              {"avtotrakt": "@calls_stat",
                 "autopartner": "@autopartnertmn",
                 "avtograd": "@agradtmn",
                 "forwardsurgut": "@forwardsurgut",
