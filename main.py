@@ -4,6 +4,8 @@ import os
 import requests
 from time import sleep
 from dotenv import load_dotenv
+
+import custom_fit
 from customers import make_message
 from balance import get_balance
 from sale_back import sale_back
@@ -36,7 +38,7 @@ def get_session_id(name: str) -> str:
     return session_id
 
 
-def script(dealer_id: int, name: str, name_group: str, session_id: str) -> list or None:
+def script(dealer_id: int, name: str, name_group: str, session_id: str, group=False) -> list or None:
     """making message an answered and refused calls"""
     start_time = f'{datetime.date.today()}T00:00:00.000Z'
     headers = {
@@ -81,15 +83,12 @@ def script(dealer_id: int, name: str, name_group: str, session_id: str) -> list 
             custom_message = artem_eremin(dealer_id, session_id)
             return f'{text[0]}\n{custom_message}'
         else:
-            return text
+            if group is True:
+                return text
+            else:
+                return text[0]
     else:
         return None
-
-
-def read_json() -> dict:
-    with open("id_cab.json", "r") as id_file:
-        data = json.load(id_file)
-        return data
 
 
 def message(sms, CHAT_ID):
@@ -98,14 +97,16 @@ def message(sms, CHAT_ID):
     data = {'chat_id': CHAT_ID,
             'text': sms
             }
-    requests.post(URL, data=data)
+    #requests.post(URL, data=data)
+    print(sms)
 
 
 def collect_data() -> None:
-    access = read_json()['CABINET_ID']
-    chat_adress = read_json()['CHANNEL']
+    with open("id_cab.json", "r") as id_file:
+        data = json.load(id_file)
+    access = data['CABINET_ID']
+    chat_adress = data['CHANNEL']
     time = datetime.date.today().strftime('%d.%m')
-
     for value in access:
         dealer_name = list(value)[0]
         chat_id = chat_adress[dealer_name]
@@ -127,7 +128,7 @@ def collect_data() -> None:
             balance_text = ''
             my_ex_text = ''
             for avtosalon in value[dealer_name]:
-                calls_info = script(avtosalon.get('id'), avtosalon.get('name'), dealer_name, session_id)
+                calls_info = script(avtosalon.get('id'), avtosalon.get('name'), dealer_name, session_id, group=True)
                 balance_info = get_balance(avtosalon.get('id'), avtosalon.get('name'), session_id)
                 my_excar = sale_back(avtosalon.get('id'), avtosalon.get('name'), session_id)
                 if calls_info is not None:
@@ -147,7 +148,7 @@ def collect_data() -> None:
 
 if __name__ == '__main__':
     while True:
-        time_now = datetime.datetime.now() + datetime.timedelta(hours=3)
+        time_now = datetime.datetime.now()# + datetime.timedelta(hours=3)
         h = time_now.hour
         m = time_now.minute
         d = time_now.date().strftime("%d")

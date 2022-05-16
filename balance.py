@@ -24,7 +24,7 @@ def get_balance(dealer_id: int, name: str, session_id: str) -> str:
     try:
         days_to_empty = r['rest_days']
 
-        if days_to_empty in [1, 3, 5, 7]:
+        if days_to_empty in [1, 3, 7]:
             text = f'{name}\nденьги закончатся через {days_to_empty} дн.\n'
             return text
     except:

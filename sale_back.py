@@ -31,8 +31,9 @@ def sale_back(dealer_id: int, name: str, session_id: str) -> str:
     }
     r = requests.post(URL, json=data, headers=headers).json()
     try:
-        offer_created = r['comebacks'][0]['offer']['created']
-        date = str(offer_created).split('T')[0]
+        created_date = r['comebacks'][0]['offer']["additional_info"]['creation_date']
+        dt = datetime.datetime.fromtimestamp(int(created_date)/1000)
+        date = str(dt).split(' ')[0]
         if date == str(date_today):
             mark = r['comebacks'][0]['offer']['car_info']['mark']
             model = r['comebacks'][0]['offer']['car_info']['model']

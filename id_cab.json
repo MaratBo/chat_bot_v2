@@ -163,36 +163,5 @@
                       "id": "48739"}
                   ]
                 }
-    ],
-
-    "CABINET_ID2": [
-                {"skoda_planeta": [
-                          {"name": "Skoda",
-                            "id": "49925"}
-                  ]
-                },
-                {"geely_planeta": [
-                          {"name": "Geely",
-                            "id": "41282"}
-                  ]
-                },
-                {"used_planeta": [
-                          {"name": "Planeta used",
-                            "id": "43526"}
-                  ]
-                },
-                {"chery_planeta": [
-                          {"name": "Chery",
-                            "id": "51436"}
-                  ]
-                },
-                {"reginas_autoru": [
-                          {"name": "chl0161",
-                            "id": "32228"
-                          },
-                          {"name": "chl0074",
-                            "id": "25091"}
-                  ]
-                }
     ]
 }
