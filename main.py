@@ -4,8 +4,6 @@ import os
 import requests
 from time import sleep
 from dotenv import load_dotenv
-
-import custom_fit
 from customers import make_message
 from balance import get_balance
 from sale_back import sale_back
@@ -97,8 +95,7 @@ def message(sms, CHAT_ID):
     data = {'chat_id': CHAT_ID,
             'text': sms
             }
-    #requests.post(URL, data=data)
-    print(sms)
+    requests.post(URL, data=data)
 
 
 def collect_data() -> None:
@@ -148,7 +145,7 @@ def collect_data() -> None:
 
 if __name__ == '__main__':
     while True:
-        time_now = datetime.datetime.now()# + datetime.timedelta(hours=3)
+        time_now = datetime.datetime.now() + datetime.timedelta(hours=3)
         h = time_now.hour
         m = time_now.minute
         d = time_now.date().strftime("%d")
