@@ -16,7 +16,8 @@
                 "Petrovsky": "@petrovsky_calls",
                 "Avangard": "@avangard_calls",
                 "july": "@july_autoru",
-                "avtorum": "@avtoforum_krs"
+                "avtorum": "@avtoforum_krs",
+                "ring": "@ring_autoru"
               },
 
 
@@ -162,6 +163,24 @@
                       "name": "CHL new",
                       "id": "48739"}
                   ]
+                },
+                {
+                  "ring": [
+                    {
+                      "name": "KIA Ring",
+                      "id": "43272"
+                    }
+                  ]
                 }
-    ]
+    ],
+   "CABINET_ID2": [
+                {
+                  "ring": [
+                    {
+                      "name": "KIA Ring",
+                      "id": "43272"
+                    }
+                  ]
+                }
+     ]
 }

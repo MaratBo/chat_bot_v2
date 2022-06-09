@@ -21,6 +21,7 @@ test_list_avtograd = []
 test_list_chery_planeta = []
 test_list_forwardsurgut = []
 test_list_forwardtyumen = []
+test_list_kiaring = []
 signal_for_clean = []
 
 
@@ -77,3 +78,6 @@ def make_message(name_group, name, send_data) -> list:
     elif name_group == 'forward_tyumen':
         test_list_forwardtyumen.append(text)
         return test_list_forwardtyumen
+    elif name_group == 'ring':
+        test_list_kiaring.append(text)
+        return test_list_kiaring
