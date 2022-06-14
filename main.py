@@ -100,7 +100,7 @@ def message(sms, CHAT_ID):
 
 
 def collect_data() -> None:
-    with open("id_cab.json", "r") as id_file:
+    with open("info/id_cab.json", "r") as id_file:
         data = json.load(id_file)
     access = data['CABINET_ID2']
     chat_adress = data['CHANNEL']
