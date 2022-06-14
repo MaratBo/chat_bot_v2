@@ -95,8 +95,8 @@ def message(sms, CHAT_ID):
     data = {'chat_id': CHAT_ID,
             'text': sms
             }
-    #requests.post(URL, data=data)
-    print(sms)
+    requests.post(URL, data=data)
+    #print(sms)
 
 
 def collect_data() -> None:
@@ -151,7 +151,7 @@ if __name__ == '__main__':
         m = time_now.minute
         d = time_now.date().strftime("%d")
         print(f'check time {h}:{m}')
-        if m in range(0, 59) and h == 21:
+        if m in range(0, 59) and h == 19:
             print(f'start script {d}-{h}:{m}')
             collect_data()
             sleep(84600)
