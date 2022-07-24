@@ -8,6 +8,7 @@ from customers import make_message
 from balance import get_balance
 from sale_back import sale_back
 from custom_fit import artem_eremin
+from access_archive import CABINET_ID2, CABINET_ID, CHANNEL
 
 
 load_dotenv()
@@ -96,14 +97,16 @@ def message(sms, CHAT_ID):
             'text': sms
             }
     requests.post(URL, data=data)
-    #print(sms)
+    print(sms)
 
 
 def collect_data() -> None:
     with open("info/id_cab.json", "r") as id_file:
         data = json.load(id_file)
-    access = data['CABINET_ID2']
-    chat_adress = data['CHANNEL']
+    #access = data['CABINET_ID2']
+    access = CABINET_ID2
+    # chat_adress = data['CHANNEL']
+    chat_adress = CHANNEL[0]
     time = datetime.date.today().strftime('%d.%m')
     for value in access:
         dealer_name = list(value)[0]
@@ -151,7 +154,7 @@ if __name__ == '__main__':
         m = time_now.minute
         d = time_now.date().strftime("%d")
         print(f'check time {h}:{m}')
-        if m in range(0, 59) and h == 19:
+        if m in range(0, 59) and h == 21:
             print(f'start script {d}-{h}:{m}')
             collect_data()
             sleep(84600)

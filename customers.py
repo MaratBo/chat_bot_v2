@@ -22,6 +22,10 @@ test_list_chery_planeta = []
 test_list_forwardsurgut = []
 test_list_forwardtyumen = []
 test_list_kiaring = []
+test_list_UTC_lada_new = []
+test_list_UTC_lada_used = []
+test_list_UTC_mazda_new = []
+test_list_UTC_mazda_used = []
 signal_for_clean = []
 
 
@@ -81,3 +85,15 @@ def make_message(name_group, name, send_data) -> list:
     elif name_group == 'ring':
         test_list_kiaring.append(text)
         return test_list_kiaring
+    elif name_group == 'UTC_lada_new':
+        test_list_UTC_lada_new.append(text)
+        return test_list_UTC_lada_new
+    elif name_group == 'UTC_lada_used':
+        test_list_UTC_lada_used.append(text)
+        return test_list_UTC_lada_used
+    elif name_group == 'UTC_mazda_used':
+        test_list_UTC_mazda_used.append(text)
+        return test_list_UTC_mazda_used
+    elif name_group == 'UTC_mazda_new':
+        test_list_UTC_mazda_new.append(text)
+        return test_list_UTC_mazda_new
