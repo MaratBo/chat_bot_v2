@@ -99,8 +99,8 @@ def message(sms, CHAT_ID):
 
 
 def collect_data() -> None:
-    with open("info/id_cab.json", "r") as id_file:
-        data = json.load(id_file)
+    # with open("info/id_cab.json", "r") as id_file:
+    #     data = json.load(id_file)
     #access = data['CABINET_ID2']
     access = CABINET_ID
     # chat_adress = data['CHANNEL']
@@ -152,7 +152,7 @@ if __name__ == '__main__':
         m = time_now.minute
         d = time_now.date().strftime("%d")
         print(f'check time {h}:{m}')
-        if m in range(0, 59) and h == 18:
+        if m in range(0, 59) and h == 22:
             print(f'start script {d}-{h}:{m}')
             collect_data()
             sleep(84600)
