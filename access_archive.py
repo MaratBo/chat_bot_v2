@@ -20,7 +20,8 @@ CHANNEL = [
                 "UTC_lada_new": "@U_TC_ug",
                 "UTC_lada_used": "@UT_C_ug",
                 "UTC_mazda_new": "@UTC_ug",
-                "UTC_mazda_used": "@U_T_C_ug"
+                "UTC_mazda_used": "@U_T_C_ug",
+                "Avtopark": "avtopark_autoru"
               },
     ]
 
@@ -234,4 +235,11 @@ CABINET_ID = [
                     }
                 ]
             },
+            {"Avtopark": [
+                    {
+                        "name": "Avtopark",
+                        "id": "24331"
+                    }
+                ]
+            }
         ]
