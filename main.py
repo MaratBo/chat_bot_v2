@@ -99,11 +99,7 @@ def message(sms, CHAT_ID):
 
 
 def collect_data() -> None:
-    # with open("info/id_cab.json", "r") as id_file:
-    #     data = json.load(id_file)
-    #access = data['CABINET_ID2']
     access = CABINET_ID
-    # chat_adress = data['CHANNEL']
     chat_adress = CHANNEL[0]
     time = datetime.date.today().strftime('%d.%m')
     for value in access:

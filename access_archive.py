@@ -21,7 +21,7 @@ CHANNEL = [
                 "UTC_lada_used": "@UT_C_ug",
                 "UTC_mazda_new": "@UTC_ug",
                 "UTC_mazda_used": "@U_T_C_ug",
-                "Avtopark": "avtopark_autoru"
+                "Avtopark": "@avtopark_autoru"
               },
     ]
 
@@ -32,28 +32,7 @@ CABINET_ID2 = [
                         "id": "46824"
                     }
                 ]
-            },
-            {"UTC_lada_used": [
-                    {
-                        "name": "UTC Lada used",
-                        "id": "31470"
-                    }
-                ]
-            },
-            {"UTC_mazda_new": [
-                    {
-                        "name": "UTC Mazda new",
-                        "id": "46220"
-                    }
-                ]
-            },
-            {"UTC_mazda_used": [
-                    {
-                        "name": "UTC Mazda used",
-                        "id": "26384"
-                    }
-                ]
-            },
+            }
     ]
 
 CABINET_ID = [
