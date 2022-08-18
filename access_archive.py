@@ -26,12 +26,12 @@ CHANNEL = [
     ]
 
 CABINET_ID2 = [
-            {"UTC_lada_new": [
-                    {
-                        "name": "UTC Lada new",
-                        "id": "46824"
-                    }
-                ]
+            {"Avtopark": [
+                {
+                    "name": "Avtopark",
+                    "id": "24331"
+                }
+            ]
             }
     ]
 

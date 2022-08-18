@@ -8,7 +8,7 @@ from customers import make_message
 from balance import get_balance
 from sale_back import sale_back
 from custom_fit import artem_eremin
-from access_archive import CABINET_ID, CHANNEL
+from access_archive import CABINET_ID, CHANNEL, CABINET_ID2
 
 
 load_dotenv()
@@ -57,7 +57,7 @@ def script(dealer_id: int, name: str, name_group: str, session_id: str, group=Fa
         },
     }
     global target_calls
-    if name_group in ['Avangard', 'Petrovsky', 'M2O', 'axis']:
+    if name_group in ['Avangard', 'Petrovsky', 'M2O', 'axis', 'Avtopark']:
         target_calls = 'уникальные/целевые'
         ADD_DATA = [{"targets": "ALL_TARGET_GROUP"}, {"targets": "TARGET_GROUP"}]
     else:
