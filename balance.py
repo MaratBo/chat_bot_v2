@@ -7,25 +7,28 @@ load_dotenv()
 token = os.getenv('MANAGER_TOKEN')
 
 URL = 'https://apiauto.ru/1.0/dealer/account'
+exceptions = ['Avtopark',]
 
 
-def get_balance(dealer_id: int, name: str, session_id: str) -> str:
+def get_balance(dealer_id: int, name: str, session_id: str) -> str or None:
     """первый пуш менее 7 дней, второй 5 дней, третий если один день"""
+    if name not in exceptions:
+        headers = {
+            'X-Session-Id': session_id,
+            'X-Authorization': token,
+            'Accept': 'application/json',
+            'x-dealer-id': dealer_id,
+        }
 
-    headers = {
-        'X-Session-Id': session_id,
-        'X-Authorization': token,
-        'Accept': 'application/json',
-        'x-dealer-id': dealer_id,
-    }
+        r = requests.get(URL, headers=headers).json()
 
-    r = requests.get(URL, headers=headers).json()
+        try:
+            days_to_empty = r['rest_days']
 
-    try:
-        days_to_empty = r['rest_days']
-
-        if days_to_empty in [1, 3, 7]:
-            text = f'{name}\nденьги закончатся через {days_to_empty} дн.\n'
-            return text
-    except:
-        pass
+            if days_to_empty in [1, 3, 7]:
+                text = f'{name}\nденьги закончатся через {days_to_empty} дн.\n'
+                return text
+        except:
+            pass
+    else:
+        return None
