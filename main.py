@@ -88,7 +88,7 @@ def script(dealer_id: int, name: str, name_group: str, session_id: str, group=Fa
         return None
 
 
-def message(sms, CHAT_ID):
+def message(sms, CHAT_ID, dealer_name=None):
     URL = (
         'https://api.telegram.org/bot{token}/sendMessage'.format(token=TLG_TOKEN))
     data = {'chat_id': CHAT_ID,
@@ -126,19 +126,20 @@ def collect_data() -> None:
                 calls_info = script(avtosalon.get('id'), avtosalon.get('name'), dealer_name, session_id, group=True)
                 balance_info = get_balance(avtosalon.get('id'), avtosalon.get('name'), session_id)
                 my_excar = sale_back(avtosalon.get('id'), avtosalon.get('name'), session_id)
-                if calls_info is not None:
-                    calls_text += f'{calls_info[-1]}\n'
-                if balance_info is not None:
-                    balance_text += balance_info
+                if dealer_name != 'july':
+                    if calls_info is not None:
+                        calls_text += f'{calls_info[-1]}\n'
+                    if balance_info is not None:
+                        balance_text += balance_info
                 if my_excar is not None:
                     my_ex_text += f'{my_excar}\n'
             if calls_text != '':
                 message(f'Звонки за {time} {target_calls}\n'
-                        f'{calls_text}', chat_id)
+                        f'{calls_text}', chat_id, dealer_name)
             if balance_text != '':
-                message(f'Балансы кабинетов:\n{balance_text}', chat_id)
+                message(f'Балансы кабинетов:\n{balance_text}', chat_id, dealer_name)
             if my_ex_text != '':
-                message(f'Ваш автомобиль снова в продаже:\n{my_ex_text}', chat_id)
+                message(f'Ваш автомобиль снова в продаже:\n{my_ex_text}', chat_id, dealer_name)
 
 
 if __name__ == '__main__':

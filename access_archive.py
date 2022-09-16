@@ -175,7 +175,13 @@ CABINET_ID = [
                         "id": "46589"},
                     {
                         "name": "CHL new",
-                        "id": "48739"}
+                        "id": "48739"},
+                    {
+                        "name": "KRD used",
+                        "id": "50473"},
+                    {
+                        "name": "KRD_Lada",
+                        "id": "50806"}
                 ]
             },
             {
