@@ -109,17 +109,25 @@ def collect_data() -> None:
         processing_permissions = channel_list[dealer_name][1]
         session_id = get_session_id(dealer_name)
         if len(value[dealer_name]) == 1:
-            calls_info = script(value[dealer_name][0].get('id'), value[dealer_name][0].get('name'), dealer_name,
+            if processing_permissions['calls'] is True:
+                calls_info = script(value[dealer_name][0].get('id'), value[dealer_name][0].get('name'), dealer_name,
                                 session_id)
-            if calls_info is not None:
-                message(f'Звонки за {time} {target_calls}\n'
-                        f'{calls_info}', chat_id)
-            balance_info = get_balance(value[dealer_name][0].get('id'), value[dealer_name][0].get('name'), session_id)
-            if balance_info is not None:
-                message(f'Балансы кабинетов:\n{balance_info}', chat_id)
-            my_excar = sale_back(value[dealer_name][0].get('id'), value[dealer_name][0].get('name'), session_id)
-            if my_excar is not None:
-                message(f'Ваш автомобиль снова в продаже:\n{my_excar}', chat_id)
+                if calls_info is not None:
+                    message(f'Звонки за {time} {target_calls}\n'
+                            f'{calls_info}', chat_id)
+            if processing_permissions['balance'] is True:
+                balance_info = get_balance(value[dealer_name][0].get('id'), value[dealer_name][0].get('name'), session_id)
+                if balance_info is not None:
+                    message(f'Балансы кабинетов:\n{balance_info}', chat_id)
+            if processing_permissions['my_ex'] is True:
+                my_excar = sale_back(value[dealer_name][0].get('id'), value[dealer_name][0].get('name'), session_id)
+                if my_excar is not None:
+                    message(f'Ваш автомобиль снова в продаже:\n{my_excar}', chat_id)
+            if processing_permissions['booking'] is True:
+                booking_car = online_booking(value[dealer_name][0].get('id'), value[dealer_name][0].get('name'),
+                                             session_id)
+                if booking_car is not None:
+                    message(booking_car, chat_id)
         else:
             calls_text = ''
             balance_text = ''
