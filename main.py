@@ -9,6 +9,7 @@ from balance import get_balance
 from sale_back import sale_back
 from custom_fit import artem_eremin
 from access_archive import CABINET_ID, CHANNEL, CABINET_ID2
+from booking import online_booking
 
 
 load_dotenv()
@@ -100,46 +101,64 @@ def message(sms, CHAT_ID):
 
 def collect_data() -> None:
     access = CABINET_ID
-    chat_adress = CHANNEL[0]
+    channel_list = CHANNEL[0]
     time = datetime.date.today().strftime('%d.%m')
     for value in access:
         dealer_name = list(value)[0]
-        chat_id = chat_adress[dealer_name]
+        chat_id = channel_list[dealer_name][0]
+        processing_permissions = channel_list[dealer_name][1]
         session_id = get_session_id(dealer_name)
         if len(value[dealer_name]) == 1:
-            calls_info = script(value[dealer_name][0].get('id'), value[dealer_name][0].get('name'), dealer_name,
+            if processing_permissions['calls'] is True:
+                calls_info = script(value[dealer_name][0].get('id'), value[dealer_name][0].get('name'), dealer_name,
                                 session_id)
-            if calls_info is not None:
-                message(f'Звонки за {time} {target_calls}\n'
-                        f'{calls_info}', chat_id)
-            balance_info = get_balance(value[dealer_name][0].get('id'), value[dealer_name][0].get('name'), session_id)
-            if balance_info is not None:
-                message(f'Балансы кабинетов:\n{balance_info}', chat_id)
-            my_excar = sale_back(value[dealer_name][0].get('id'), value[dealer_name][0].get('name'), session_id)
-            if my_excar is not None:
-                message(f'Ваш автомобиль снова в продаже:\n{my_excar}', chat_id)
+                if calls_info is not None:
+                    message(f'Звонки за {time} {target_calls}\n'
+                            f'{calls_info}', chat_id)
+            if processing_permissions['balance'] is True:
+                balance_info = get_balance(value[dealer_name][0].get('id'), value[dealer_name][0].get('name'), session_id)
+                if balance_info is not None:
+                    message(f'Балансы кабинетов:\n{balance_info}', chat_id)
+            if processing_permissions['my_ex'] is True:
+                my_excar = sale_back(value[dealer_name][0].get('id'), value[dealer_name][0].get('name'), session_id)
+                if my_excar is not None:
+                    message(f'Ваш автомобиль снова в продаже:\n{my_excar}', chat_id)
+            if processing_permissions['booking'] is True:
+                booking_car = online_booking(value[dealer_name][0].get('id'), value[dealer_name][0].get('name'),
+                                             session_id)
+                if booking_car is not None:
+                    message(booking_car, chat_id)
         else:
             calls_text = ''
             balance_text = ''
             my_ex_text = ''
+            booking_text = ''
             for avtosalon in value[dealer_name]:
-                calls_info = script(avtosalon.get('id'), avtosalon.get('name'), dealer_name, session_id, group=True)
-                balance_info = get_balance(avtosalon.get('id'), avtosalon.get('name'), session_id)
-                my_excar = sale_back(avtosalon.get('id'), avtosalon.get('name'), session_id)
-                if dealer_name != 'july':
+                if processing_permissions['calls'] is True:
+                    calls_info = script(avtosalon.get('id'), avtosalon.get('name'), dealer_name, session_id, group=True)
                     if calls_info is not None:
                         calls_text += f'{calls_info[-1]}\n'
+                if processing_permissions['balance'] is True:
+                    balance_info = get_balance(avtosalon.get('id'), avtosalon.get('name'), session_id)
                     if balance_info is not None:
                         balance_text += balance_info
-                if my_excar is not None:
-                    my_ex_text += f'{my_excar}\n'
+                if processing_permissions['my_ex'] is True:
+                    my_excar = sale_back(avtosalon.get('id'), avtosalon.get('name'), session_id)
+                    if my_excar is not None:
+                        my_ex_text += f'{my_excar}\n'
+                if processing_permissions['booking'] is True:
+                    booking_car = online_booking(avtosalon.get('id'), avtosalon.get('name'), session_id)
+                    if booking_car is not None:
+                        booking_text += f'{booking_car}\n'
             if calls_text != '':
                 message(f'Звонки за {time} {target_calls}\n'
-                        f'{calls_text}', chat_id, dealer_name)
+                        f'{calls_text}', chat_id)
             if balance_text != '':
-                message(f'Балансы кабинетов:\n{balance_text}', chat_id, dealer_name)
+                message(f'Балансы кабинетов:\n{balance_text}', chat_id)
             if my_ex_text != '':
-                message(f'Ваш автомобиль снова в продаже:\n{my_ex_text}', chat_id, dealer_name)
+                message(f'Ваш автомобиль снова в продаже:\n{my_ex_text}', chat_id)
+            if booking_text != '':
+                message(booking_text, chat_id)
 
 
 if __name__ == '__main__':
