@@ -27,6 +27,7 @@ test_list_UTC_lada_used = []
 test_list_UTC_mazda_new = []
 test_list_UTC_mazda_used = []
 test_list_avtopark_yvl = []
+test_list_forward_auto = []
 signal_for_clean = []
 
 
@@ -101,3 +102,6 @@ def make_message(name_group, name, send_data) -> list:
     elif name_group == 'Avtopark':
         test_list_avtopark_yvl.append(text)
         return test_list_avtopark_yvl
+    elif name_group == 'Forward_auto':
+        test_list_forward_auto.append(text)
+        return test_list_forward_auto
