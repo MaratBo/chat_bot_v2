@@ -10,6 +10,7 @@ from sale_back import sale_back
 from custom_fit import artem_eremin
 from access_archive import CABINET_ID, CHANNEL, CABINET_ID2
 from booking import online_booking
+from trade_in import tradeIn_request
 
 
 load_dotenv()
@@ -128,11 +129,17 @@ def collect_data() -> None:
                                              session_id)
                 if booking_car is not None:
                     message(booking_car, chat_id)
+            if processing_permissions['trade-in'] is True:
+                trade_in_requests = tradeIn_request(value[dealer_name][0].get('id'), value[dealer_name][0].get('name'),
+                                             session_id)
+                if trade_in_requests is not None:
+                    message(trade_in_requests, chat_id)
         else:
             calls_text = ''
             balance_text = ''
             my_ex_text = ''
             booking_text = ''
+            trade_in_text = ''
             for avtosalon in value[dealer_name]:
                 if processing_permissions['calls'] is True:
                     calls_info = script(avtosalon.get('id'), avtosalon.get('name'), dealer_name, session_id, group=True)
@@ -150,6 +157,10 @@ def collect_data() -> None:
                     booking_car = online_booking(avtosalon.get('id'), avtosalon.get('name'), session_id)
                     if booking_car is not None:
                         booking_text += f'{booking_car}\n'
+                if processing_permissions['trade-in'] is True:
+                    trade_in_requests = tradeIn_request(avtosalon.get('id'), avtosalon.get('name'), session_id)
+                    if trade_in_requests is not None:
+                        trade_in_text += f'{trade_in_requests}\n'
             if calls_text != '':
                 message(f'Звонки за {time} {target_calls}\n'
                         f'{calls_text}', chat_id)
@@ -159,6 +170,8 @@ def collect_data() -> None:
                 message(f'Ваш автомобиль снова в продаже:\n{my_ex_text}', chat_id)
             if booking_text != '':
                 message(booking_text, chat_id)
+            if trade_in_text != '':
+                message(trade_in_text, chat_id)
 
 
 if __name__ == '__main__':

@@ -1,28 +1,29 @@
 CHANNEL = [
-    {"avtotrakt": ["@calls_stat", {"calls": True, "balance": True, "my_ex": True, "booking": True}],
-     "autopartner": ["@autopartnertmn", {"calls": True, "balance": True, "my_ex": True, "booking": True}],
-     "avtograd": ["@agradtmn", {"calls": True, "balance": True, "my_ex": True, "booking": True}],
-     "forwardsurgut": ["@forwardsurgut", {"calls": True, "balance": True, "my_ex": False, "booking": True}],
-     "forward_tyumen": ["@forward_tyumen", {"calls": True, "balance": True, "my_ex": False, "booking": True}],
-     "skoda_planeta": ["@skoda_planeta", {"calls": True, "balance": True, "my_ex": True, "booking": True}],
-     "geely_planeta": ["@planeta_auto_ug", {"calls": True, "balance": True, "my_ex": True, "booking": True}],
-     "used_planeta": ["@planetaugprobeg", {"calls": True, "balance": True, "my_ex": True, "booking": True}],
-     "chery_planeta": ["@cherypau", {"calls": True, "balance": True, "my_ex": True, "booking": True}],
-     "reginas_autoru": ["@reginas_autoru", {"calls": True, "balance": True, "my_ex": True, "booking": True}],
-     "mias": ["@chl_autoru", {"calls": True, "balance": True, "my_ex": True, "booking": True}],
-     "axis": ["@axis_bets", {"calls": True, "balance": True, "my_ex": True, "booking": True}],
-     "M2O": ["@m2o_autoru", {"calls": True, "balance": True, "my_ex": True, "booking": True}],
-     "Petrovsky": ["@petrovsky_calls", {"calls": True, "balance": True, "my_ex": True, "booking": True}],
-     "Avangard": ["@avangard_calls", {"calls": True, "balance": True, "my_ex": True, "booking": True}],
+    {"avtotrakt": ["@calls_stat", {"calls": True, "balance": True, "my_ex": True, "booking": True, "trade-in": True}],
+     "autopartner": ["@autopartnertmn", {"calls": True, "balance": True, "my_ex": True, "booking": True,"trade-in": True}],
+     "avtograd": ["@agradtmn", {"calls": True, "balance": True, "my_ex": True, "booking": True, "trade-in": True}],
+     "forwardsurgut": ["@forwardsurgut", {"calls": True, "balance": True, "my_ex": False, "booking": True, "trade-in": True}],
+     "forward_tyumen": ["@forward_tyumen", {"calls": True, "balance": True, "my_ex": False, "booking": True, "trade-in": True}],
+     "skoda_planeta": ["@skoda_planeta", {"calls": True, "balance": True, "my_ex": True, "booking": True, "trade-in": True}],
+     "geely_planeta": ["@planeta_auto_ug", {"calls": True, "balance": True, "my_ex": True, "booking": True, "trade-in": True}],
+     "used_planeta": ["@planetaugprobeg", {"calls": True, "balance": True, "my_ex": True, "booking": True, "trade-in": True}],
+     "chery_planeta": ["@cherypau", {"calls": True, "balance": True, "my_ex": True, "booking": True, "trade-in": True}],
+     "reginas_autoru": ["@reginas_autoru", {"calls": True, "balance": True, "my_ex": True, "booking": True, "trade-in": True}],
+     "mias": ["@chl_autoru", {"calls": True, "balance": True, "my_ex": True, "booking": True, "trade-in": True}],
+     "axis": ["@axis_bets", {"calls": True, "balance": True, "my_ex": True, "booking": True, "trade-in": True}],
+     "M2O": ["@m2o_autoru", {"calls": True, "balance": True, "my_ex": True, "booking": True, "trade-in": True}],
+     "Petrovsky": ["@petrovsky_calls", {"calls": True, "balance": True, "my_ex": True, "booking": True, "trade-in": True}],
+     "Avangard": ["@avangard_calls", {"calls": True, "balance": True, "my_ex": True, "booking": True, "trade-in": True}],
      "july": ["@july_autoru", {"calls": False, "balance": False, "my_ex": True, "booking": True, "trade-in": True}],
-     "avtorum": ["@avtoforum_krs", {"calls": True, "balance": True, "my_ex": True, "booking": True}],
-     "ring": ["@ring_autoru", {"calls": True, "balance": True, "my_ex": True, "booking": True}],
-     "UTC_lada_new": ["@U_TC_ug", {"calls": True, "balance": True, "my_ex": True, "booking": True}],
-     "UTC_lada_used": ["@UT_C_ug", {"calls": True, "balance": True, "my_ex": True, "booking": True}],
-     "UTC_mazda_new": ["@UTC_ug", {"calls": True, "balance": True, "my_ex": True, "booking": True}],
-     "UTC_mazda_used": ["@U_T_C_ug", {"calls": True, "balance": True, "my_ex": True, "booking": True}],
-     "Avtopark": ["@avtopark_autoru", {"calls": True, "balance": False, "my_ex": True, "booking": True}],
-     "Forward_auto": ["@forward_autoru", {"calls": False, "balance": False, "my_ex": True, "booking": True, "trade-in": True}]
+     "avtorum": ["@avtoforum_krs", {"calls": True, "balance": True, "my_ex": True, "booking": True, "trade-in": True}],
+     "ring": ["@ring_autoru", {"calls": True, "balance": True, "my_ex": True, "booking": True, "trade-in": True}],
+     "UTC_lada_new": ["@U_TC_ug", {"calls": True, "balance": True, "my_ex": True, "booking": True, "trade-in": True}],
+     "UTC_lada_used": ["@UT_C_ug", {"calls": True, "balance": True, "my_ex": True, "booking": True, "trade-in": True}],
+     "UTC_mazda_new": ["@UTC_ug", {"calls": True, "balance": True, "my_ex": True, "booking": True, "trade-in": True}],
+     "UTC_mazda_used": ["@U_T_C_ug", {"calls": True, "balance": True, "my_ex": True, "booking": True, "trade-in": True}],
+     "Avtopark": ["@avtopark_autoru", {"calls": True, "balance": False, "my_ex": True, "booking": True, "trade-in": True}],
+     "Forward_auto": ["@forward_autoru", {"calls": False, "balance": False, "my_ex": True, "booking": True, "trade-in": True}],
+     "Avtoset_RF": ["@avtosetAMK", {"calls": False, "balance": False, "my_ex": True, "booking": True, "trade-in": True}]
      },
 ]
 
@@ -81,8 +82,30 @@ CABINET_ID2 = [
             "name": "Chaikovskyi",
             "id": "45026"
         }
-    ]}
-]
+    ]},
+    {"Avtoset_RF": [
+            {
+                "name": "Lada_EKT",
+                "id": "32656"
+            },
+            {
+                "name": "Avtoset_Tolyatti",
+                "id": "40668"
+            },
+            {
+                "name": "Avtoset_EKT",
+                "id": "27878"
+            },
+            {
+                "name": "Avtoset_Samara",
+                "id": "50977"
+            },
+            {
+                "name": "AMK_EKT",
+                "id": "31968"
+            }
+        ]}
+    ]
 
 CABINET_ID = [
     {"avtotrakt": [
@@ -326,5 +349,28 @@ CABINET_ID = [
             "name": "Chaikovskyi",
             "id": "45026"
         }
+    ]},
+    {"Avtoset_RF": [
+        {
+            "name": "Lada_EKT",
+            "id": "32656"
+        },
+        {
+            "name": "Avtoset_Tolyatti",
+            "id": "40668"
+        },
+        {
+            "name": "Avtoset_EKT",
+            "id": "27878"
+        },
+        {
+            "name": "Avtoset_Samara",
+            "id": "50977"
+        },
+        {
+            "name": "AMK_EKT",
+            "id": "31968"
+        },
+
     ]}
 ]
