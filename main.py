@@ -171,7 +171,7 @@ def collect_data() -> None:
             if booking_text != '':
                 message(booking_text, chat_id)
             if trade_in_text != '':
-                message(trade_in_text, chat_id)
+                message(f'Новая заявка на трейд-ин:\n{trade_in_text}', chat_id)
 
 
 if __name__ == '__main__':
