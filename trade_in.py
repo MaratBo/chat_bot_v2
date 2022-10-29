@@ -6,7 +6,7 @@ import datetime
 
 load_dotenv()
 token = os.getenv('MANAGER_TOKEN')
-date_today = datetime.date.today()-datetime.timedelta(days=1)
+date_today = datetime.date.today()
 URL = 'https://apiauto.ru/1.0/dealer/trade-in'
 
 
@@ -29,9 +29,6 @@ def tradeIn_request(dealer_id: int, name: str, session_id: str) -> str or None:
         offer = all_requests.get('client_offer').get('mobile_url')
         if seller_name is None:
             seller_name = 'Имя не указано '
-        # return f'Новая заявка на трейд-ин в кабинете {name }\n'\
-        #        f'{offer}\n' \
-        #        f'пользователь: {seller_name }{seller_phone}'
         return f'кабинет {name}\nпользователь {seller_name} {seller_phone}\n{offer}\n'
     except:
         return None

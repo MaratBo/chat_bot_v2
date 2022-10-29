@@ -133,7 +133,7 @@ def collect_data() -> None:
                 trade_in_requests = tradeIn_request(value[dealer_name][0].get('id'), value[dealer_name][0].get('name'),
                                              session_id)
                 if trade_in_requests is not None:
-                    message(trade_in_requests, chat_id)
+                    message(f'Новая заявка на трейд-ин:\n{trade_in_requests}', chat_id)
         else:
             calls_text = ''
             balance_text = ''
@@ -152,7 +152,7 @@ def collect_data() -> None:
                 if processing_permissions['my_ex'] is True:
                     my_excar = sale_back(avtosalon.get('id'), avtosalon.get('name'), session_id)
                     if my_excar is not None:
-                        my_ex_text += f'{my_excar}\n'
+                        my_ex_text += f'{my_excar}'
                 if processing_permissions['booking'] is True:
                     booking_car = online_booking(avtosalon.get('id'), avtosalon.get('name'), session_id)
                     if booking_car is not None:

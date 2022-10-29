@@ -23,88 +23,95 @@ CHANNEL = [
      "UTC_mazda_used": ["@U_T_C_ug", {"calls": True, "balance": True, "my_ex": True, "booking": True, "trade-in": True}],
      "Avtopark": ["@avtopark_autoru", {"calls": True, "balance": False, "my_ex": True, "booking": True, "trade-in": True}],
      "Forward_auto": ["@forward_autoru", {"calls": False, "balance": False, "my_ex": True, "booking": True, "trade-in": True}],
-     "Avtoset_RF": ["@avtosetAMK", {"calls": False, "balance": False, "my_ex": True, "booking": True, "trade-in": True}]
+     "Avtoset_RF": ["@avtosetAMK", {"calls": False, "balance": False, "my_ex": True, "booking": True, "trade-in": True}],
+     "USED_Surgut": ["@buautosurgut", {"calls": False, "balance": True, "my_ex": True, "booking": True, "trade-in": True}]
      },
 ]
 
 CABINET_ID2 = [
 
-    {"Forward_auto": [
-        {
-            "name": "Mitsubishi_EKT",
-            "id": "46894"
-        },
-        {
-            "name": "Pro_UFA",
-            "id": "43596"
-        },
-        {
-            "name": "Orenburg",
-            "id": "50072"
-        },
-        {
-            "name": "Pro_Izhevsk",
-            "id": "38221"
-        },
-        {
-            "name": "AC_GAZ_Omsk",
-            "id": "48294"
-        },
-        {
-            "name": "Pro_Tyumen",
-            "id": "48154"
-        },
-        {
-            "name": "Surgut",
-            "id": "44360"
-        },
-        {
-            "name": "Nizhnevartovsk",
-            "id": "49990"
-        },
-        {
-            "name": "Nizhnevartovsk_Skoda",
-            "id": "51186"
-        },
-        {
-            "name": "Volgograd",
-            "id": "49945"
-        },
-        {
-            "name": "Pro_Perm",
-            "id": "24873"
-        },
-        {
-            "name": "Mitsubishi_Perm",
-            "id": "39540"
-        },
-        {
-            "name": "Chaikovskyi",
-            "id": "45026"
-        }
-    ]},
-    {"Avtoset_RF": [
+    # {"Forward_auto": [
+    #     # {
+    #     #     "name": "Mitsubishi_EKT",
+    #     #     "id": "46894"
+    #     # },
+    #     # {
+    #     #     "name": "Pro_UFA",
+    #     #     "id": "43596"
+    #     # },
+    #     # {
+    #     #     "name": "Orenburg",
+    #     #     "id": "50072"
+    #     # },
+    #     # {
+    #     #     "name": "Pro_Izhevsk",
+    #     #     "id": "38221"
+    #     # },
+    #     # {
+    #     #     "name": "AC_GAZ_Omsk",
+    #     #     "id": "48294"
+    #     # },
+    #     # {
+    #     #     "name": "Pro_Tyumen",
+    #     #     "id": "48154"
+    #     # },
+    #     # {
+    #     #     "name": "Surgut",
+    #     #     "id": "44360"
+    #     # },
+    #     # {
+    #     #     "name": "Nizhnevartovsk",
+    #     #     "id": "49990"
+    #     # },
+    #     # {
+    #     #     "name": "Nizhnevartovsk_Skoda",
+    #     #     "id": "51186"
+    #     # },
+    #     # {
+    #     #     "name": "Volgograd",
+    #     #     "id": "49945"
+    #     # },
+    #     {
+    #         "name": "Pro_Perm",
+    #         "id": "24873"
+    #     },
+    #     {
+    #         "name": "Mitsubishi_Perm",
+    #         "id": "39540"
+    #     },
+    #     {
+    #         "name": "Chaikovskyi",
+    #         "id": "45026"
+    #     }
+    # ]},
+    # {"Avtoset_RF": [
+    #         {
+    #             "name": "Lada_EKT",
+    #             "id": "32656"
+    #         },
+    #         {
+    #             "name": "Avtoset_Tolyatti",
+    #             "id": "40668"
+    #         },
+    #         {
+    #             "name": "Avtoset_EKT",
+    #             "id": "27878"
+    #         },
+    #         {
+    #             "name": "Avtoset_Samara",
+    #             "id": "50977"
+    #         },
+    #         {
+    #             "name": "AMK_EKT",
+    #             "id": "31968"
+    #         }
+    #     ]},
+    {"USED_Surgut": [
             {
-                "name": "Lada_EKT",
-                "id": "32656"
-            },
-            {
-                "name": "Avtoset_Tolyatti",
-                "id": "40668"
-            },
-            {
-                "name": "Avtoset_EKT",
-                "id": "27878"
-            },
-            {
-                "name": "Avtoset_Samara",
-                "id": "50977"
-            },
-            {
-                "name": "AMK_EKT",
-                "id": "31968"
+                "name": "USED_86",
+                "id": "32184"
             }
-        ]}
+     ]}
     ]
 
 CABINET_ID = [
@@ -371,6 +378,11 @@ CABINET_ID = [
             "name": "AMK_EKT",
             "id": "31968"
         },
-
-    ]}
+    ]},
+    {"USED_Surgut": [
+            {
+                "name": "USED_86",
+                "id": "32184"
+            }
+     ]}
 ]
