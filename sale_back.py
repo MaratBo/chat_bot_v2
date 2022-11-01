@@ -49,8 +49,7 @@ def sale_back(dealer_id: int, name: str, session_id: str) -> str:
             created_date = value['offer']["additional_info"]['creation_date']
             dt = datetime.datetime.fromtimestamp(int(created_date)/1000)
             date = str(dt).split(' ')[0]
-            # print(value)
-            # print(dt)
+            #print(value)
             if date == str(date_today):
                 mark = value['offer']['car_info']['mark']
                 model = value['offer']['car_info']['model']

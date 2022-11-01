@@ -30,6 +30,8 @@ test_list_avtopark_yvl = []
 test_list_forward_auto = []
 test_list_avtoset_rf = []
 test_list_USED_Surgut = []
+test_list_alfa_garant = []
+test_list_west_wind = []
 signal_for_clean = []
 
 
@@ -113,3 +115,9 @@ def make_message(name_group, name, send_data) -> list:
     elif name_group == 'USED_Surgut':
         test_list_USED_Surgut.append(text)
         return test_list_USED_Surgut
+    elif name_group == 'Alfa_garant':
+        test_list_alfa_garant.append(text)
+        return test_list_alfa_garant
+    elif name_group == 'West_wind':
+        test_list_west_wind.append(text)
+        return test_list_west_wind

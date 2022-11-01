@@ -24,7 +24,9 @@ CHANNEL = [
      "Avtopark": ["@avtopark_autoru", {"calls": True, "balance": False, "my_ex": True, "booking": True, "trade-in": True}],
      "Forward_auto": ["@forward_autoru", {"calls": False, "balance": False, "my_ex": True, "booking": True, "trade-in": True}],
      "Avtoset_RF": ["@avtosetAMK", {"calls": False, "balance": False, "my_ex": True, "booking": True, "trade-in": True}],
-     "USED_Surgut": ["@buautosurgut", {"calls": False, "balance": True, "my_ex": True, "booking": True, "trade-in": True}]
+     "USED_Surgut": ["@buautosurgut", {"calls": True, "balance": True, "my_ex": True, "booking": True, "trade-in": True}],
+     "Alfa_garant": ["@alfa_garant_ekt", {"calls": True, "balance": True, "my_ex": True, "booking": True, "trade-in": True}],
+     "West_wind": ["@vostveter_ekt", {"calls": True, "balance": True, "my_ex": True, "booking": True, "trade-in": True}],
      },
 ]
 
@@ -106,10 +108,22 @@ CABINET_ID2 = [
     #             "id": "31968"
     #         }
     #     ]},
-    {"USED_Surgut": [
+    # {"USED_Surgut": [
+    #         {
+    #             "name": "USED_86",
+    #             "id": "32184"
+    #         }
+    #  ]},
+    {"Alfa_garant": [
             {
-                "name": "USED_86",
-                "id": "32184"
+                "name": "Alfa_garant",
+                "id": "47116"
+            }
+     ]},
+    {"West_wind": [
+            {
+                "name": "West_wind",
+                "id": "20113"
             }
      ]}
     ]
@@ -383,6 +397,18 @@ CABINET_ID = [
             {
                 "name": "USED_86",
                 "id": "32184"
+            }
+     ]},
+    {"Alfa_garant": [
+            {
+                "name": "Alfa_garant",
+                "id": "47116"
+            }
+     ]},
+    {"West_wind": [
+            {
+                "name": "West_wind",
+                "id": "20113"
             }
      ]}
 ]
