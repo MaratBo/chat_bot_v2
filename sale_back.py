@@ -25,39 +25,22 @@ def sale_back(dealer_id: int, name: str, session_id: str) -> str:
         "filter": {
             "creation_date_from": 0,
         },
-        "only_last_seller": True,
+        "only_last_seller": False,
 
     }
     r = requests.post(URL, json=data, headers=headers).json()
-    # try:
-    #     created_date = r['comebacks'][0]['offer']["additional_info"]['creation_date']
-    #     dt = datetime.datetime.fromtimestamp(int(created_date)/1000)
-    #     date = str(dt).split(' ')[0]
-    #     if date == str(date_today):
-    #         mark = r['comebacks'][0]['offer']['car_info']['mark']
-    #         model = r['comebacks'][0]['offer']['car_info']['model']
-    #         url = r['comebacks'][0]['offer']['mobile_url']
-    #         text = f'{name} {mark} {model}\n{url} '
-    #         return text
-    #     else:
-    #         pass
-    # except:
-    #     pass
     text = ''
     try:
         for value in r['comebacks']:
-            created_date = value['offer']["additional_info"]['creation_date']
-            dt = datetime.datetime.fromtimestamp(int(created_date)/1000)
-            date = str(dt).split(' ')[0]
-            #print(value)
+            created = value['offer']['created']
+            date = str(created).split('T')[0]
             if date == str(date_today):
                 mark = value['offer']['car_info']['mark']
                 model = value['offer']['car_info']['model']
                 url = value['offer']['mobile_url']
                 text += f'{name} {mark} {model}\n{url}\n'
             else:
-                return None
-            return text
+                pass
+        return text
     except:
         pass
-

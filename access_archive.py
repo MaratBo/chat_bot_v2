@@ -115,16 +115,18 @@ CABINET_ID2 = [
     #             "id": "32184"
     #         }
     #  ]},
-    {"Alfa_garant": [
+    {"VM_Novosib": [
             {
-                "name": "Alfa_garant",
-                "id": "47116"
-            }
-     ]},
-    {"West_wind": [
+                "name": "VM_Lexus",
+                "id": "37143"
+            },
             {
-                "name": "West_wind",
-                "id": "20113"
+                "name": "VM_Geely",
+                "id": "52904"
+            },
+            {
+                "name": "VM_Toyota",
+                "id": "47386"
             }
      ]}
     ]
