@@ -27,6 +27,7 @@ CHANNEL = [
      "USED_Surgut": ["@buautosurgut", {"calls": True, "balance": True, "my_ex": True, "booking": True, "trade-in": True}],
      "Alfa_garant": ["@alfa_garant_ekt", {"calls": True, "balance": True, "my_ex": True, "booking": True, "trade-in": True}],
      "West_wind": ["@vostveter_ekt", {"calls": True, "balance": True, "my_ex": True, "booking": True, "trade-in": True}],
+     "VM_Novosib": ["@+lMdIh-KhtlAzNjky", {"calls": False, "balance": False, "my_ex": True, "booking": True, "trade-in": True}],
      },
 ]
 
@@ -409,6 +410,20 @@ CABINET_ID = [
             {
                 "name": "West_wind",
                 "id": "20113"
+            }
+     ]},
+    {"VM_Novosib": [
+            {
+                "name": "VM_Lexus",
+                "id": "37143"
+            },
+            {
+                "name": "VM_Geely",
+                "id": "52904"
+            },
+            {
+                "name": "VM_Toyota",
+                "id": "47386"
             }
      ]}
 ]

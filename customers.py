@@ -32,6 +32,7 @@ test_list_avtoset_rf = []
 test_list_USED_Surgut = []
 test_list_alfa_garant = []
 test_list_west_wind = []
+test_list_VM_Novosib = []
 signal_for_clean = []
 
 
@@ -121,3 +122,6 @@ def make_message(name_group, name, send_data) -> list:
     elif name_group == 'West_wind':
         test_list_west_wind.append(text)
         return test_list_west_wind
+    elif name_group == 'VM_Novosib':
+        test_list_VM_Novosib.append(text)
+        return test_list_VM_Novosib
