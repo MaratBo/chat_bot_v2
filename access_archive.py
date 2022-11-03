@@ -27,7 +27,7 @@ CHANNEL = [
      "USED_Surgut": ["@buautosurgut", {"calls": True, "balance": True, "my_ex": True, "booking": True, "trade-in": True}],
      "Alfa_garant": ["@alfa_garant_ekt", {"calls": True, "balance": True, "my_ex": True, "booking": True, "trade-in": True}],
      "West_wind": ["@vostveter_ekt", {"calls": True, "balance": True, "my_ex": True, "booking": True, "trade-in": True}],
-     "VM_Novosib": ["@+lMdIh-KhtlAzNjky", {"calls": False, "balance": False, "my_ex": True, "booking": True, "trade-in": True}],
+     "VM_Novosib": ["@VM_Nsk_autoru", {"calls": False, "balance": False, "my_ex": True, "booking": True, "trade-in": True}],
      },
 ]
 
