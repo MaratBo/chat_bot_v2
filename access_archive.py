@@ -115,6 +115,11 @@ CABINET_ID2 = [
     #             "id": "32184"
     #         }
     #  ]},
+    {"avtorum": [
+        {"name": "Avtorum",
+         "id": "29854"}
+    ]
+    },
     {"VM_Novosib": [
             {
                 "name": "VM_Lexus",

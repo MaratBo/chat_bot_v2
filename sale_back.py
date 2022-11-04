@@ -10,7 +10,7 @@ URL = 'https://apiauto.ru/1.0/comeback'
 date_today = datetime.date.today()# - datetime.timedelta(days=1)
 
 
-def sale_back(dealer_id: int, name: str, session_id: str) -> str:
+def sale_back(dealer_id: int, name: str, session_id: str) -> str or None:
     headers = {
         'X-Session-Id': session_id,
         'X-Authorization': token,
@@ -41,6 +41,9 @@ def sale_back(dealer_id: int, name: str, session_id: str) -> str:
                 text += f'{name} {mark} {model}\n{url}\n'
             else:
                 pass
-        return text
+        if len(text) > 0:
+            return text
+        else:
+            return None
     except:
         pass
