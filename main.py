@@ -97,7 +97,7 @@ def message(sms, CHAT_ID):
             'text': sms
             }
     requests.post(URL, data=data)
-    print(sms)
+    #print(sms)
 
 
 def collect_data() -> None:
