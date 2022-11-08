@@ -97,7 +97,7 @@ def message(sms, CHAT_ID):
             'text': sms
             }
     requests.post(URL, data=data)
-    #print(sms)
+    print(sms)
 
 
 def collect_data() -> None:
@@ -174,8 +174,16 @@ def collect_data() -> None:
                 message(f'Новая заявка на трейд-ин:\n{trade_in_text}', chat_id)
 
 
+def test_new_channel():
+    sms = 'test'
+    ids = ['@GepardSautoru', '@Avtomirautoru']
+    for id in ids:
+        message(sms, id)
+
+
 if __name__ == '__main__':
     while True:
+        #test_new_channel()
         time_now = datetime.datetime.now() + datetime.timedelta(hours=3)
         h = time_now.hour
         m = time_now.minute

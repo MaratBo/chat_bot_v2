@@ -28,6 +28,8 @@ CHANNEL = [
      "Alfa_garant": ["@alfa_garant_ekt", {"calls": True, "balance": True, "my_ex": True, "booking": True, "trade-in": True}],
      "West_wind": ["@vostveter_ekt", {"calls": True, "balance": True, "my_ex": True, "booking": True, "trade-in": True}],
      "VM_Novosib": ["@VM_Nsk_autoru", {"calls": False, "balance": False, "my_ex": True, "booking": True, "trade-in": True}],
+     "Gepard": ["@GepardSautoru", {"calls": False, "balance": False, "my_ex": True, "booking": True, "trade-in": True}],
+     "AvtomirNSK": ["@Avtomirautoru", {"calls": False, "balance": False, "my_ex": True, "booking": True, "trade-in": True}],
      },
 ]
 
@@ -115,23 +117,17 @@ CABINET_ID2 = [
     #             "id": "32184"
     #         }
     #  ]},
-    {"avtorum": [
-        {"name": "Avtorum",
-         "id": "29854"}
-    ]
-    },
-    {"VM_Novosib": [
+
+    {"Gepard": [
             {
-                "name": "VM_Lexus",
-                "id": "37143"
-            },
+                "name": "Gepard",
+                "id": "13188"
+            }
+     ]},
+    {"AvtomirNSK": [
             {
-                "name": "VM_Geely",
-                "id": "52904"
-            },
-            {
-                "name": "VM_Toyota",
-                "id": "47386"
+                "name": "AvtomirNSK",
+                "id": "31918"
             }
      ]}
     ]
@@ -431,6 +427,18 @@ CABINET_ID = [
             {
                 "name": "VM_Toyota",
                 "id": "47386"
+            }
+     ]},
+    {"Gepard": [
+            {
+                "name": "Gepard",
+                "id": "13188"
+            }
+     ]},
+    {"AvtomirNSK": [
+            {
+                "name": "AvtomirNSK",
+                "id": "31918"
             }
      ]}
 ]
