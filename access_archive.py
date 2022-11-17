@@ -30,106 +30,21 @@ CHANNEL = [
      "VM_Novosib": ["@VM_Nsk_autoru", {"calls": False, "balance": False, "my_ex": True, "booking": True, "trade-in": True}],
      "Gepard": ["@GepardSautoru", {"calls": False, "balance": False, "my_ex": True, "booking": True, "trade-in": True}],
      "AvtomirNSK": ["@Avtomirautoru", {"calls": False, "balance": False, "my_ex": True, "booking": True, "trade-in": True}],
+     "Avtoplus_EKT": ["@autoplus_zapad", {"calls": False, "balance": False, "my_ex": True, "booking": True, "trade-in": True}],
      },
 ]
 
 CABINET_ID2 = [
-
-    # {"Forward_auto": [
-    #     # {
-    #     #     "name": "Mitsubishi_EKT",
-    #     #     "id": "46894"
-    #     # },
-    #     # {
-    #     #     "name": "Pro_UFA",
-    #     #     "id": "43596"
-    #     # },
-    #     # {
-    #     #     "name": "Orenburg",
-    #     #     "id": "50072"
-    #     # },
-    #     # {
-    #     #     "name": "Pro_Izhevsk",
-    #     #     "id": "38221"
-    #     # },
-    #     # {
-    #     #     "name": "AC_GAZ_Omsk",
-    #     #     "id": "48294"
-    #     # },
-    #     # {
-    #     #     "name": "Pro_Tyumen",
-    #     #     "id": "48154"
-    #     # },
-    #     # {
-    #     #     "name": "Surgut",
-    #     #     "id": "44360"
-    #     # },
-    #     # {
-    #     #     "name": "Nizhnevartovsk",
-    #     #     "id": "49990"
-    #     # },
-    #     # {
-    #     #     "name": "Nizhnevartovsk_Skoda",
-    #     #     "id": "51186"
-    #     # },
-    #     # {
-    #     #     "name": "Volgograd",
-    #     #     "id": "49945"
-    #     # },
-    #     {
-    #         "name": "Pro_Perm",
-    #         "id": "24873"
-    #     },
-    #     {
-    #         "name": "Mitsubishi_Perm",
-    #         "id": "39540"
-    #     },
-    #     {
-    #         "name": "Chaikovskyi",
-    #         "id": "45026"
-    #     }
-    # ]},
-    # {"Avtoset_RF": [
-    #         {
-    #             "name": "Lada_EKT",
-    #             "id": "32656"
-    #         },
-    #         {
-    #             "name": "Avtoset_Tolyatti",
-    #             "id": "40668"
-    #         },
-    #         {
-    #             "name": "Avtoset_EKT",
-    #             "id": "27878"
-    #         },
-    #         {
-    #             "name": "Avtoset_Samara",
-    #             "id": "50977"
-    #         },
-    #         {
-    #             "name": "AMK_EKT",
-    #             "id": "31968"
-    #         }
-    #     ]},
-    # {"USED_Surgut": [
-    #         {
-    #             "name": "USED_86",
-    #             "id": "32184"
-    #         }
-    #  ]},
-
-    {"Gepard": [
+        {"Avtoplus_EKT": [
             {
-                "name": "Gepard",
-                "id": "13188"
-            }
-     ]},
-    {"AvtomirNSK": [
+                "name": "NEW",
+                "id": "4930"
+            },
             {
-                "name": "AvtomirNSK",
-                "id": "31918"
+                "name": "USED",
+                "id": "33548"
             }
-     ]}
+        ]}
     ]
 
 CABINET_ID = [
@@ -209,53 +124,53 @@ CABINET_ID = [
          "id": "38271"}
     ]
     },
-    {"axis":
-        [
-            {"name": "Hyundai",
-             "id": "46876"}
-        ]
-    },
-    {"M2O": [
-        {
-            "name": "Jukova",
-            "id": "45672"},
-        {
-            "name": "Kamchatskaya",
-            "id": "50074"}
-    ]
-    },
-    {
-        "Petrovsky": [
-            {
-                "name": "Sofiiskaya",
-                "id": "918"},
-            {
-                "name": "Rustavely",
-                "id": "36038"},
-            {
-                "name": "Leninsky",
-                "id": "49296"},
-            {
-                "name": "Vyborgsky",
-                "id": "38513"}
-        ]
-    },
-    {
-        "Avangard": [
-            {
-                "name": "Hyundai",
-                "id": "32196"},
-            {
-                "name": "Geely",
-                "id": "35438"},
-            {
-                "name": "Opel",
-                "id": "45038"},
-            {
-                "name": "Chevrolet",
-                "id": "49382"}
-        ]
-    },
+    # {"axis":
+    #     [
+    #         {"name": "Hyundai",
+    #          "id": "46876"}
+    #     ]
+    # },
+    # {"M2O": [
+    #     {
+    #         "name": "Jukova",
+    #         "id": "45672"},
+    #     {
+    #         "name": "Kamchatskaya",
+    #         "id": "50074"}
+    # ]
+    # },
+    # {
+    #     "Petrovsky": [
+    #         {
+    #             "name": "Sofiiskaya",
+    #             "id": "918"},
+    #         {
+    #             "name": "Rustavely",
+    #             "id": "36038"},
+    #         {
+    #             "name": "Leninsky",
+    #             "id": "49296"},
+    #         {
+    #             "name": "Vyborgsky",
+    #             "id": "38513"}
+    #     ]
+    # },
+    # {
+    #     "Avangard": [
+    #         {
+    #             "name": "Hyundai",
+    #             "id": "32196"},
+    #         {
+    #             "name": "Geely",
+    #             "id": "35438"},
+    #         {
+    #             "name": "Opel",
+    #             "id": "45038"},
+    #         {
+    #             "name": "Chevrolet",
+    #             "id": "49382"}
+    #     ]
+    # },
     {
         "july": [
             {
@@ -278,14 +193,14 @@ CABINET_ID = [
                 "id": "50806"}
         ]
     },
-    {
-        "ring": [
-            {
-                "name": "KIA Ring",
-                "id": "43272"
-            }
-        ]
-    },
+    # {
+    #     "ring": [
+    #         {
+    #             "name": "KIA Ring",
+    #             "id": "43272"
+    #         }
+    #     ]
+    # },
     {"UTC_lada_new": [
         {
             "name": "UTC Lada new",
@@ -439,6 +354,16 @@ CABINET_ID = [
             {
                 "name": "AvtomirNSK",
                 "id": "31918"
+            }
+     ]},
+    {"Avtoplus_EKT": [
+            {
+                "name": "NEW",
+                "id": "4930"
+            },
+            {
+                "name": "USED",
+                "id": "33548"
             }
      ]}
 ]
