@@ -176,7 +176,7 @@ def collect_data() -> None:
 
 def test_new_channel():
     sms = 'test'
-    ids = ['@autoplus_zapad']
+    ids = ['@autoplus_skoda_audi']
     for id in ids:
         message(sms, id)
 

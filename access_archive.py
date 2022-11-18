@@ -31,20 +31,43 @@ CHANNEL = [
      "Gepard": ["@GepardSautoru", {"calls": False, "balance": False, "my_ex": True, "booking": True, "trade-in": True}],
      "AvtomirNSK": ["@Avtomirautoru", {"calls": False, "balance": False, "my_ex": True, "booking": True, "trade-in": True}],
      "Avtoplus_EKT": ["@autoplus_zapad", {"calls": False, "balance": False, "my_ex": True, "booking": True, "trade-in": True}],
+     "Avtoplus_AS": ["@autoplus_skoda_audi", {"calls": False, "balance": False, "my_ex": True, "booking": True, "trade-in": True}],
      },
 ]
 
 CABINET_ID2 = [
-        {"Avtoplus_EKT": [
-            {
-                "name": "NEW",
-                "id": "4930"
-            },
-            {
-                "name": "USED",
-                "id": "33548"
-            }
-        ]}
+    {"Avtoplus_EKT": [
+        {
+            "name": "NEW",
+            "id": "4930"
+        },
+        {
+            "name": "USED",
+            "id": "33548"
+        }
+    ]},
+    {"Avtoplus_AS": [
+        {
+            "name": "audi_used",
+            "id": "21598"
+        },
+        {
+            "name": "audi_new",
+            "id": "46926"
+        },
+        {
+            "name": "audi_kosmo",
+            "id": "31840"
+        },
+        {
+            "name": "europa_auto",
+            "id": "5970"
+        },
+        {
+            "name": "europa_skoda",
+            "id": "21612"
+        }
+    ]}
     ]
 
 CABINET_ID = [
@@ -364,6 +387,28 @@ CABINET_ID = [
             {
                 "name": "USED",
                 "id": "33548"
+            }
+     ]},
+    {"Avtoplus_AS": [
+            {
+                "name": "audi_used",
+                "id": "21598"
+            },
+            {
+                "name": "audi_new",
+                "id": "46926"
+            },
+            {
+                "name": "audi_kosmo",
+                "id": "31840"
+            },
+            {
+                "name": "europa_auto",
+                "id": "5970"
+            },
+            {
+                "name": "europa_skoda",
+                "id": "21612"
             }
      ]}
 ]
