@@ -25,52 +25,144 @@ CHANNEL = [
      "Forward_auto": ["@forward_autoru", {"calls": False, "balance": False, "my_ex": True, "booking": True, "trade-in": True}],
      "Avtoset_RF": ["@avtosetAMK", {"calls": False, "balance": False, "my_ex": True, "booking": True, "trade-in": True}],
      "USED_Surgut": ["@buautosurgut", {"calls": True, "balance": True, "my_ex": True, "booking": True, "trade-in": True}],
-     "Alfa_garant": ["@alfa_garant_ekt", {"calls": True, "balance": True, "my_ex": True, "booking": True, "trade-in": True}],
-     "West_wind": ["@vostveter_ekt", {"calls": True, "balance": True, "my_ex": True, "booking": True, "trade-in": True}],
-     "VM_Novosib": ["@VM_Nsk_autoru", {"calls": False, "balance": False, "my_ex": True, "booking": True, "trade-in": True}],
-     "Gepard": ["@GepardSautoru", {"calls": False, "balance": False, "my_ex": True, "booking": True, "trade-in": True}],
-     "AvtomirNSK": ["@Avtomirautoru", {"calls": False, "balance": False, "my_ex": True, "booking": True, "trade-in": True}],
-     "Avtoplus_EKT": ["@autoplus_zapad", {"calls": False, "balance": False, "my_ex": True, "booking": True, "trade-in": True}],
-     "Avtoplus_AS": ["@autoplus_skoda_audi", {"calls": False, "balance": False, "my_ex": True, "booking": True, "trade-in": True}],
+     "Alfa_garant": ["@alfa_garant_ekt", {"calls": True, "balance": True, "my_ex": True, "booking": True, "trade-in": True}, {"time": [14, 16]}],
+     "West_wind": ["@vostveter_ekt", {"calls": True, "balance": True, "my_ex": True, "booking": True, "trade-in": True}, {"time": [14]}],
+     "VM_Novosib": ["@VM_Nsk_autoru", {"calls": False, "balance": False, "my_ex": True, "booking": True, "trade-in": True}, {"time": [14]}],
+     "Gepard": ["@GepardSautoru", {"calls": False, "balance": False, "my_ex": True, "booking": True, "trade-in": True}, {"time": [14]}],
+     "AvtomirNSK": ["@Avtomirautoru", {"calls": False, "balance": False, "my_ex": True, "booking": True, "trade-in": True}, {"time": [8, 14]}],
+     "Avtoplus_EKT": ["@autoplus_zapad", {"calls": False, "balance": False, "my_ex": True, "booking": True, "trade-in": True}, {"time": [8, 14]}],
+     "Avtoplus_AS": ["@autoplus_skoda_audi", {"calls": False, "balance": False, "my_ex": True, "booking": True, "trade-in": True}, {"time": [8, 14]}],
+     "BKK": ["@BKK_autoru", {"calls": False, "balance": False, "my_ex": True, "booking": True, "trade-in": True},
+                     {"time": [8, 14]}],
+     "Saturn": ["@autoru_saturn", {"calls": False, "balance": False, "my_ex": True, "booking": True, "trade-in": True}],
+     "ACLeninsky": ["@ACLeninskii", {"calls": True, "balance": True, "my_ex": True, "booking": True, "trade-in": True}]
+
      },
 ]
 
-CABINET_ID2 = [
-    {"Avtoplus_EKT": [
+# CABINET_SPECIAL_TIME = [
+#     {"autopartner": [
+#         {"name": "tmn0188",
+#          "id": "50554"}
+#     ]
+#     },
+#     {"Avtoplus_EKT": [
+#         {
+#             "name": "NEW",
+#             "id": "4930"
+#         },
+#         {
+#             "name": "USED",
+#             "id": "33548"
+#         }
+#     ]}
+#     ]
+CABINET_MORNING = [
+    {"ACLeninsky": [
+        {"name": "Premium",
+         "id": "51196"
+         }
+    ]},
+]
+
+CABINET_ID_12 = [
+    {"BKK": [
+            {
+                "name": "BKK",
+                "id": "42866"
+            }
+     ]},
+    {"Gepard": [
+            {
+                "name": "Gepard",
+                "id": "13188"
+            }
+     ]},
+    {"AvtomirNSK": [
+            {
+                "name": "AvtomirNSK",
+                "id": "31918"
+            }
+     ]},
+    {"Forward_auto": [
         {
-            "name": "NEW",
-            "id": "4930"
+            "name": "Mitsubishi_EKT",
+            "id": "46894"
         },
         {
-            "name": "USED",
-            "id": "33548"
+            "name": "Pro_UFA",
+            "id": "43596"
+        },
+        {
+            "name": "Orenburg",
+            "id": "50072"
+        },
+        {
+            "name": "Pro_Izhevsk",
+            "id": "38221"
+        },
+        {
+            "name": "AC_GAZ_Omsk",
+            "id": "48294"
+        },
+        {
+            "name": "Pro_Tyumen",
+            "id": "48154"
+        },
+        {
+            "name": "Surgut",
+            "id": "44360"
+        },
+        {
+            "name": "Nizhnevartovsk",
+            "id": "49990"
+        },
+        {
+            "name": "Nizhnevartovsk_Skoda",
+            "id": "51186"
+        },
+        {
+            "name": "Volgograd",
+            "id": "49945"
+        },
+        {
+            "name": "Pro_Perm",
+            "id": "24873"
+        },
+        {
+            "name": "Mitsubishi_Perm",
+            "id": "39540"
+        },
+        {
+            "name": "Chaikovskyi",
+            "id": "45026"
         }
     ]},
-    {"Avtoplus_AS": [
+    {"Saturn": [
         {
-            "name": "audi_used",
-            "id": "21598"
+            "name": "saturn-r-auto",
+            "id": "35022"
         },
         {
-            "name": "audi_new",
-            "id": "46926"
+            "name": "saturn-r-trade",
+            "id": "45108"
         },
         {
-            "name": "audi_kosmo",
-            "id": "31840"
+            "name": "audi-perm",
+            "id": "39902"
         },
         {
-            "name": "europa_auto",
-            "id": "5970"
+            "name": "subaru-perm",
+            "id": "34970"
         },
         {
-            "name": "europa_skoda",
-            "id": "21612"
+            "name": "JLR-perm",
+            "id": "35880"
         }
     ]}
     ]
 
-CABINET_ID = [
+CABINET_ID_18 = [
     {"avtotrakt": [
         {"name": "PRObeg",
          "id": "3820"
@@ -259,60 +351,60 @@ CABINET_ID = [
         }
     ]
     },
-    {"Forward_auto": [
-        {
-            "name": "Mitsubishi_EKT",
-            "id": "46894"
-        },
-        {
-            "name": "Pro_UFA",
-            "id": "43596"
-        },
-        {
-            "name": "Orenburg",
-            "id": "50072"
-        },
-        {
-            "name": "Pro_Izhevsk",
-            "id": "38221"
-        },
-        {
-            "name": "AC_GAZ_Omsk",
-            "id": "48294"
-        },
-        {
-            "name": "Pro_Tyumen",
-            "id": "48154"
-        },
-        {
-            "name": "Surgut",
-            "id": "44360"
-        },
-        {
-            "name": "Nizhnevartovsk",
-            "id": "49990"
-        },
-        {
-            "name": "Nizhnevartovsk_Skoda",
-            "id": "51186"
-        },
-        {
-            "name": "Volgograd",
-            "id": "49945"
-        },
-        {
-            "name": "Pro_Perm",
-            "id": "24873"
-        },
-        {
-            "name": "Mitsubishi_Perm",
-            "id": "39540"
-        },
-        {
-            "name": "Chaikovskyi",
-            "id": "45026"
-        }
-    ]},
+    # {"Forward_auto": [
+    #     {
+    #         "name": "Mitsubishi_EKT",
+    #         "id": "46894"
+    #     },
+    #     {
+    #         "name": "Pro_UFA",
+    #         "id": "43596"
+    #     },
+    #     {
+    #         "name": "Orenburg",
+    #         "id": "50072"
+    #     },
+    #     {
+    #         "name": "Pro_Izhevsk",
+    #         "id": "38221"
+    #     },
+    #     {
+    #         "name": "AC_GAZ_Omsk",
+    #         "id": "48294"
+    #     },
+    #     {
+    #         "name": "Pro_Tyumen",
+    #         "id": "48154"
+    #     },
+    #     {
+    #         "name": "Surgut",
+    #         "id": "44360"
+    #     },
+    #     {
+    #         "name": "Nizhnevartovsk",
+    #         "id": "49990"
+    #     },
+    #     {
+    #         "name": "Nizhnevartovsk_Skoda",
+    #         "id": "51186"
+    #     },
+    #     {
+    #         "name": "Volgograd",
+    #         "id": "49945"
+    #     },
+    #     {
+    #         "name": "Pro_Perm",
+    #         "id": "24873"
+    #     },
+    #     {
+    #         "name": "Mitsubishi_Perm",
+    #         "id": "39540"
+    #     },
+    #     {
+    #         "name": "Chaikovskyi",
+    #         "id": "45026"
+    #     }
+    # ]},
     {"Avtoset_RF": [
         {
             "name": "Lada_EKT",
@@ -367,18 +459,18 @@ CABINET_ID = [
                 "id": "47386"
             }
      ]},
-    {"Gepard": [
-            {
-                "name": "Gepard",
-                "id": "13188"
-            }
-     ]},
-    {"AvtomirNSK": [
-            {
-                "name": "AvtomirNSK",
-                "id": "31918"
-            }
-     ]},
+    # {"Gepard": [
+    #         {
+    #             "name": "Gepard",
+    #             "id": "13188"
+    #         }
+    #  ]},
+    # {"AvtomirNSK": [
+    #         {
+    #             "name": "AvtomirNSK",
+    #             "id": "31918"
+    #         }
+    #  ]},
     {"Avtoplus_EKT": [
             {
                 "name": "NEW",

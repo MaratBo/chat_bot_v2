@@ -37,7 +37,7 @@ test_list_Gepard = []
 test_list_AvtomirNSK = []
 test_list_Avtoplus_EKT = []
 test_list_Avtoplus_AS = []
-
+test_list_ACLeninsky = []
 signal_for_clean = []
 
 
@@ -142,3 +142,7 @@ def make_message(name_group, name, send_data) -> list:
     elif name_group == 'Avtoplus_AS':
         test_list_Avtoplus_AS.append(text)
         return test_list_Avtoplus_AS
+    elif name_group == 'ACLeninsky':
+        test_list_ACLeninsky.append(text)
+        return test_list_ACLeninsky
+
