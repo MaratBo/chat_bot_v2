@@ -35,28 +35,31 @@ CHANNEL = [
      "BKK": ["@BKK_autoru", {"calls": False, "balance": False, "my_ex": True, "booking": True, "trade-in": True},
                      {"time": [8, 14]}],
      "Saturn": ["@autoru_saturn", {"calls": False, "balance": False, "my_ex": True, "booking": True, "trade-in": True}],
-     "ACLeninsky": ["@ACLeninskii", {"calls": True, "balance": True, "my_ex": True, "booking": True, "trade-in": True}]
+     "ACLeninsky": ["@ACLeninskii", {"calls": True, "balance": True, "my_ex": True, "booking": True, "trade-in": True}],
+     "CMavto": ["@SamAv_Smr", {"calls": False, "balance": False, "my_ex": True, "booking": True, "trade-in": True}],
+     "NordAvto": ["@nordnord2", {"calls": False, "balance": False, "my_ex": True, "booking": True, "trade-in": True}],
+     "Artex": ["@artex_rnd_autoru", {"calls": False, "balance": True, "my_ex": True, "booking": True, "trade-in": False}],
+     "AvtomirPet": ["@Automir_Hyundai", {"calls": False, "balance": False, "my_ex": True, "booking": True, "trade-in": True}],
+     "Reginas": ["@reginas_lenina", {"calls": False, "balance": False, "my_ex": True, "booking": False, "trade-in": False}]
 
      },
 ]
 
-# CABINET_SPECIAL_TIME = [
-#     {"autopartner": [
-#         {"name": "tmn0188",
-#          "id": "50554"}
-#     ]
-#     },
-#     {"Avtoplus_EKT": [
-#         {
-#             "name": "NEW",
-#             "id": "4930"
-#         },
-#         {
-#             "name": "USED",
-#             "id": "33548"
-#         }
-#     ]}
-#     ]
+TEST_TIME = [
+        {"Reginas": [
+                {"name": "Profi",
+                 "id": "54054"}
+        ]}
+    ]
+
+REGINAS = [
+        {"Reginas": [
+                {"name": "Profi",
+                 "id": "54054"}
+        ]}
+    ]
+
+
 CABINET_MORNING = [
     {"ACLeninsky": [
         {"name": "Premium",

@@ -8,7 +8,7 @@ from customers import make_message
 from balance import get_balance
 from sale_back import sale_back
 from custom_fit import artem_eremin
-from access_archive import CABINET_ID_18, CHANNEL, CABINET_MORNING, CABINET_ID_12
+from access_archive import CABINET_ID_18, CHANNEL, CABINET_MORNING, CABINET_ID_12, TEST_TIME, REGINAS
 from booking import online_booking
 from trade_in import tradeIn_request
 
@@ -110,7 +110,7 @@ def collect_data(cabinet_list) -> None:
     access = cabinet_list
     channel_list = CHANNEL[0]
     time = datetime.date.today().strftime('%d.%m')
-    yesterday = (datetime.date.today() - datetime.timedelta(days=1)).strftime('%d.%m')
+    yesterday = (datetime.date.today() - datetime.timedelta(days=0)).strftime('%d.%m')
     for value in access:
         dealer_name = list(value)[0]
         chat_id = channel_list[dealer_name][0]
@@ -136,7 +136,9 @@ def collect_data(cabinet_list) -> None:
                     message(f'Балансы кабинетов:\n{balance_info}', chat_id)
             if processing_permissions['my_ex'] is True:
                 my_excar = sale_back(value[dealer_name][0].get('id'), value[dealer_name][0].get('name'), session_id)
+                #print(f'my ex get back {my_excar}')
                 if my_excar is not None:
+                   # print(f'sms {my_excar}')
                     message(f'Ваш автомобиль снова в продаже:\n{my_excar}', chat_id)
             if processing_permissions['booking'] is True:
                 booking_car = online_booking(value[dealer_name][0].get('id'), value[dealer_name][0].get('name'),
@@ -166,8 +168,10 @@ def collect_data(cabinet_list) -> None:
                     if balance_info is not None:
                         balance_text += balance_info
                 if processing_permissions['my_ex'] is True:
+                    #print(f'my ex text TRUE {my_ex_text}')
                     my_excar = sale_back(avtosalon.get('id'), avtosalon.get('name'), session_id)
                     if my_excar is not None:
+                        #print(my_excar)
                         my_ex_text += f'{my_excar}'
                 if processing_permissions['booking'] is True:
                     booking_car = online_booking(avtosalon.get('id'), avtosalon.get('name'), session_id)
@@ -185,23 +189,42 @@ def collect_data(cabinet_list) -> None:
                         f'{calls_text}', chat_id)
             if balance_text != '':
                 message(f'Балансы кабинетов:\n{balance_text}', chat_id)
+            #print(f'my ex text {my_ex_text}')
             if my_ex_text != '':
-                message(f'Ваш автомобиль снова в продаже:\n{my_ex_text}', chat_id)
+                message(f'Ваши автомобили снова в продаже (за 60 дней):\n{my_ex_text}', chat_id)
             if booking_text != '':
                 message(booking_text, chat_id)
             if trade_in_text != '':
                 message(f'Новая заявка на трейд-ин:\n{trade_in_text}', chat_id)
 
 
-if __name__ == '__main__':
-    time_now = datetime.datetime.now()
-    h = time_now.hour
-    m = time_now.minute
-    print(f'check time {h}:{m}')
-    if h == 8:
-        collect_data(CABINET_MORNING)
-    elif h == 9:
-        collect_data(CABINET_ID_12)
-    else:
-        collect_data(CABINET_ID_18)
+# def test_new_channel():
+#     sms = 'test'
+#     ids = ['@reginas_lenina']
+#     for id in ids:
+#         print(sms, id)
+#         message(sms, id)
+#
+# test_new_channel()
+
+def reginas():
+    collect_data(REGINAS)
+reginas()
+
+#
+# if __name__ == '__main__':
+#     time_now = datetime.datetime.now()
+#     h = time_now.hour
+#     m = time_now.minute
+#     print(f'check time {h}:{m}')
+#     if h == 8:
+#         collect_data(CABINET_MORNING)
+#     elif h == 9:
+#         collect_data(CABINET_ID_12)
+#     elif h == 16:
+#         collect_data(TEST_TIME)
+#     else:
+#         collect_data(CABINET_ID_18)
+
+
 

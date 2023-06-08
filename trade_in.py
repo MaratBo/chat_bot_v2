@@ -6,7 +6,7 @@ import datetime
 
 load_dotenv()
 token = os.getenv('MANAGER_TOKEN')
-date_today = datetime.date.today()
+date_today = datetime.date.today() - datetime.timedelta(days=1)
 URL = 'https://apiauto.ru/1.0/dealer/trade-in'
 
 

@@ -8,7 +8,7 @@ from customers import make_message
 from balance import get_balance
 from sale_back import sale_back
 from custom_fit import artem_eremin
-from access_archive import CABINET_ID_18, CHANNEL, CABINET_ID_12
+from access_archive import CABINET_ID_18, CHANNEL, CABINET_ID_12, TEST_TIME
 from booking import online_booking
 from trade_in import tradeIn_request
 
@@ -101,12 +101,12 @@ def message(sms, CHAT_ID):
     data = {'chat_id': CHAT_ID,
             'text': sms
             }
-    requests.post(URL, data=data)
+    #requests.post(URL, data=data)
     print(sms)
 
 
 def collect_data(dealer_name) -> None:
-    access = CABINET_ID
+    access = TEST_TIME#CABINET_ID
     channel_list = CHANNEL[0]
     time = datetime.date.today().strftime('%d.%m')
     for value in access:
@@ -179,42 +179,43 @@ def collect_data(dealer_name) -> None:
                 message(f'Новая заявка на трейд-ин:\n{trade_in_text}', chat_id)
 
 
-def test_new_channel():
-    sms = 'test'
-    ids = ['@AP_autoru']
-    for id in ids:
-        print(sms, id)
-        message(sms, id)
+# def test_new_channel():
+#     sms = 'test'
+#     ids = ['@artex_rnd_autoru']
+#     for id in ids:
+#         print(sms, id)
+#         message(sms, id)
 
-
-# if __name__ == '__main__':
-#     #test_new_channel()
-#     while True:
-#         time_now = datetime.datetime.now() #+ datetime.timedelta(hours=3)
-#         h = time_now.hour
-#         m = time_now.minute
-#         d = time_now.date().strftime("%d")
-#         print(f'check time {h}:{m}')
-#         if m in range(0, 59) and h == 21:
-#             print(f'start script {d}-{h}:{m}')
-#             collect_data()
-#             sleep(84600)
-#         else:
-#             sleep(1200)
 
 if __name__ == '__main__':
-    test_new_channel()
-    # time_now = datetime.datetime.now()
-    # h = time_now.hour
-    # for dealer in CABINET_ID:
-    #     name = list(dealer)[0]
-    #     try:
-    #         time_start_list = CHANNEL[0][name][2].get('time')
-    #         if h in time_start_list:
-    #             collect_data(name)
-    #         else:
-    #             pass
-    #     except:
-    #         pass
+    #test_new_channel()
+    while True:
+        time_now = datetime.datetime.now() #+ datetime.timedelta(hours=3)
+        h = time_now.hour
+        m = time_now.minute
+        d = time_now.date().strftime("%d")
+        print(f'check time {h}:{m}')
+        if m in range(0, 59) and h == 21:
+            print(f'start script {d}-{h}:{m}')
+            collect_data()
+            sleep(84600)
+        else:
+            sleep(1200)
+
+if __name__ == '__main__':
+    #test_new_channel()
+    time_now = datetime.datetime.now()
+    h = time_now.hour
+    #for dealer in CABINET_ID:
+    for dealer in TEST_TIME:
+        name = list(dealer)[0]
+        try:
+            time_start_list = CHANNEL[0][name][2].get('time')
+            if h in time_start_list:
+                collect_data(name)
+            else:
+                pass
+        except:
+            pass
 
 
