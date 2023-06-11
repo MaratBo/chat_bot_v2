@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 import os
 import requests
 import time
+import bucket
 
 
 load_dotenv()
@@ -30,21 +31,18 @@ def choose_time(name: str) -> float:
 
 
 def record_offers(id: str) -> bool:
-    '''собираем айди офферов в lib.json и потом по нему проверям появление нового'''
-    with open('lib.json', 'r') as file:
-        data = json.load(file)
-        search_data = data.get(t1, None)
-        if search_data is not None:
-            if id not in search_data:
-                search_data.append(id)
-            with open('lib.json', 'r+') as file:
-                json.dump(data, file)
+    """собираем айди офферов в lib.json и потом по нему проверям появление нового"""
+    obj = bucket.get_object(bucket.auth())
+    search_date = obj.get(t1, None)
+    if search_date is not None:
+        if id not in search_date:
+            search_date.append(id)
+            bucket.load_object(bucket.auth(), obj)
             return True
-        else:
-            data[t1] = []
-            with open('lib.json', 'r+') as file:
-                json.dump(data, file)
-            return False
+    else:
+        obj[t1] = []
+        bucket.load_object(bucket.auth(), obj)
+        return False
 
 
 def sale_back(dealer_id: int, name: str, session_id: str) -> str or None:
@@ -92,5 +90,3 @@ def sale_back(dealer_id: int, name: str, session_id: str) -> str or None:
             return None
     except:
         pass
-
-#record_offers('iuut-tjjt-2')
