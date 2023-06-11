@@ -31,7 +31,7 @@ def choose_time(name: str) -> float:
 
 
 def record_offers(id: str) -> bool:
-    """собираем айди офферов в lib.json и потом по нему проверям появление нового"""
+    """сверяем айди офферов с данными в bucket"""
     obj = bucket.get_object(bucket.auth())
     search_date = obj.get(t1, None)
     if search_date is not None:
